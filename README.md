@@ -23,7 +23,7 @@ Url Shortner/
 2. The backend validates the URL and stores it in the H2 database.
 3. The backend creates a short code like `aB93xQ`.
 4. React displays the short URL to the user.
-5. When someone opens `http://localhost:8080/aB93xQ`, Spring Boot looks up the code and redirects to the original URL.
+5. When someone opens the generated short URL, Spring Boot looks up the code and redirects to the original URL.
 
 ## Backend Setup
 
@@ -105,6 +105,52 @@ Build frontend:
 ```bash
 cd frontend
 npm run build
+```
+
+## Run With Docker Compose
+
+From the project root:
+
+```bash
+docker compose up --build
+```
+
+Open the frontend:
+
+```text
+http://localhost:3000
+```
+
+The backend runs at:
+
+```text
+http://localhost:8080
+```
+
+Stop containers:
+
+```bash
+docker compose down
+```
+
+## Deployment Settings
+
+Set this on the deployed backend:
+
+```text
+FRONTEND_ORIGIN=https://your-vercel-frontend-url
+```
+
+Set this on the deployed frontend:
+
+```text
+VITE_API_BASE_URL=https://your-render-backend-url
+```
+
+The backend now creates short URLs from the real request domain. For example, when the API is called at Render, the generated short URL will look like:
+
+```text
+https://your-render-backend-url/abc1234
 ```
 ---
 

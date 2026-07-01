@@ -26,7 +26,7 @@ class UrlControllerTest {
                         .content("{\"originalUrl\":\"https://spring.io/projects/spring-boot\"}"))
                 .andExpect(status().isCreated())
                 .andExpect(jsonPath("$.originalUrl").value("https://spring.io/projects/spring-boot"))
-                .andExpect(jsonPath("$.shortUrl", startsWith("http://localhost:8080/")));
+                .andExpect(jsonPath("$.shortUrl", startsWith("http://localhost/")));
     }
 
     @Test

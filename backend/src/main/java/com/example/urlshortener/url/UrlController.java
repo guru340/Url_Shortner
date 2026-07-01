@@ -1,8 +1,8 @@
 package com.example.urlshortener.url;
 
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -22,23 +22,23 @@ import java.util.Map;
 public class UrlController {
 
     private final UrlShortenerService service;
-    private final String backendBaseUrl;
 
-    public UrlController(UrlShortenerService service,
-                         @Value("${app.backend-base-url}") String backendBaseUrl) {
+    public UrlController(UrlShortenerService service) {
         this.service = service;
-        this.backendBaseUrl = backendBaseUrl;
     }
 
     @PostMapping("/api/urls")
-    public ResponseEntity<UrlMappingResponse> createShortUrl(@Valid @RequestBody CreateShortUrlRequest request) {
+    public ResponseEntity<UrlMappingResponse> createShortUrl(@Valid @RequestBody CreateShortUrlRequest request,
+                                                             HttpServletRequest servletRequest) {
         UrlMapping mapping = service.createShortUrl(request.originalUrl());
-        UrlMappingResponse response = UrlMappingResponse.fromEntity(mapping, backendBaseUrl);
+        UrlMappingResponse response = UrlMappingResponse.fromEntity(mapping, currentBaseUrl(servletRequest));
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
     @GetMapping("/api/urls")
-    public List<UrlMappingResponse> getRecentUrls() {
+    public List<UrlMappingResponse> getRecentUrls(HttpServletRequest servletRequest) {
+        String backendBaseUrl = currentBaseUrl(servletRequest);
+
         return service.findRecentUrls()
                 .stream()
                 .map(mapping -> UrlMappingResponse.fromEntity(mapping, backendBaseUrl))
@@ -49,6 +49,18 @@ public class UrlController {
     public void redirectToOriginalUrl(@PathVariable String shortCode, HttpServletResponse response) throws IOException {
         String originalUrl = service.findOriginalUrlAndRecordVisit(shortCode);
         response.sendRedirect(originalUrl);
+    }
+
+    private String currentBaseUrl(HttpServletRequest request) {
+        String scheme = request.getScheme();
+        String host = request.getServerName();
+        int port = request.getServerPort();
+        boolean isDefaultPort = ("http".equals(scheme) && port == 80)
+                || ("https".equals(scheme) && port == 443);
+
+        return isDefaultPort
+                ? scheme + "://" + host
+                : scheme + "://" + host + ":" + port;
     }
 
     @ExceptionHandler(UrlNotFoundException.class)
