@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Check, Copy, ExternalLink, Link2, Loader2, RefreshCw } from 'lucide-react';
 import { createShortUrl, getRecentUrls } from './api';
 
