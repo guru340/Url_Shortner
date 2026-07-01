@@ -106,3 +106,8 @@ Build frontend:
 cd frontend
 npm run build
 ```
+---
+
+<p align="center">
+  Built with by <b>Mayank Sangwani</b>
+</p>
