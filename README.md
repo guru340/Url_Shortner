@@ -109,5 +109,5 @@ npm run build
 ---
 
 <p align="center">
-  Built with by <b>Mayank Sangwani</b>
+  Built  by <b>Mayank Sangwani</b>
 </p>
