@@ -53,7 +53,6 @@ export default function App() {
     <main className="app-shell">
       <section className="workspace">
         <div className="intro">
-          <span className="eyebrow">Spring Boot + React</span>
           <h1>URL Shortener</h1>
           <p>
             Paste a long link, create a compact short URL, and track how many times it has been opened.

@@ -1,6 +1,6 @@
 :root {
-  color: #17202a;
-  background: #f6f7f9;
+  color: #18212f;
+  background: #f8fafc;
   font-family:
     Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
@@ -28,9 +28,9 @@ a {
   min-height: 100vh;
   padding: 32px 20px;
   background:
-    linear-gradient(135deg, rgba(0, 130, 116, 0.14), transparent 34%),
-    linear-gradient(315deg, rgba(229, 81, 57, 0.13), transparent 36%),
-    #f6f7f9;
+    linear-gradient(135deg, rgba(37, 99, 235, 0.12), transparent 34%),
+    linear-gradient(315deg, rgba(245, 158, 11, 0.16), transparent 36%),
+    #f8fafc;
 }
 
 .workspace {
@@ -46,7 +46,7 @@ a {
 .eyebrow {
   display: block;
   margin-bottom: 8px;
-  color: #007569;
+  color: #2563eb;
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0;
@@ -73,23 +73,23 @@ h2 {
 .intro p {
   max-width: 620px;
   margin-top: 16px;
-  color: #52606d;
+  color: #5f6f84;
   font-size: 1.05rem;
   line-height: 1.6;
 }
 
 .tool-panel {
   padding: 24px;
-  border: 1px solid #dce2e8;
+  border: 1px solid #d9e2ee;
   border-radius: 8px;
   background: #ffffff;
-  box-shadow: 0 18px 45px rgba(23, 32, 42, 0.08);
+  box-shadow: 0 18px 45px rgba(24, 33, 47, 0.08);
 }
 
 .shorten-form label {
   display: block;
   margin-bottom: 10px;
-  color: #27313b;
+  color: #253044;
   font-size: 0.92rem;
   font-weight: 800;
 }
@@ -101,13 +101,13 @@ h2 {
   gap: 12px;
   min-height: 56px;
   padding: 8px 8px 8px 16px;
-  border: 1px solid #cfd8df;
+  border: 1px solid #cbd8e8;
   border-radius: 8px;
-  background: #fbfcfd;
+  background: #f9fbff;
 }
 
 .input-row svg {
-  color: #007569;
+  color: #2563eb;
   flex: 0 0 auto;
 }
 
@@ -117,7 +117,7 @@ h2 {
   border: 0;
   outline: 0;
   background: transparent;
-  color: #17202a;
+  color: #18212f;
 }
 
 .input-row button,
@@ -129,7 +129,7 @@ h2 {
   min-height: 42px;
   border: 0;
   border-radius: 8px;
-  background: #17202a;
+  background: #2563eb;
   color: #ffffff;
   cursor: pointer;
   font-weight: 800;
@@ -147,8 +147,8 @@ h2 {
 
 .secondary-button {
   padding: 0 14px;
-  background: #e9eef2;
-  color: #17202a;
+  background: #fff3d6;
+  color: #7c4a03;
 }
 
 .message {
@@ -167,14 +167,14 @@ h2 {
   gap: 16px;
   margin-top: 18px;
   padding: 16px;
-  border: 1px solid #9bd5cd;
+  border: 1px solid #b6cdfb;
   border-radius: 8px;
-  background: #effbf8;
+  background: #eff6ff;
 }
 
 .result span,
 .url-actions span {
-  color: #52606d;
+  color: #5f6f84;
   font-size: 0.86rem;
   font-weight: 800;
 }
@@ -183,7 +183,7 @@ h2 {
 .short-link {
   display: block;
   margin-top: 4px;
-  color: #005f56;
+  color: #1d4ed8;
   font-weight: 900;
   overflow-wrap: anywhere;
   text-decoration: none;
@@ -212,7 +212,7 @@ h2 {
   align-items: center;
   gap: 18px;
   padding: 16px;
-  border: 1px solid #dce2e8;
+  border: 1px solid #d9e2ee;
   border-radius: 8px;
   background: #ffffff;
 }
@@ -223,7 +223,7 @@ h2 {
 
 .url-main p {
   margin-top: 6px;
-  color: #52606d;
+  color: #5f6f84;
   overflow-wrap: anywhere;
 }
 
@@ -240,18 +240,18 @@ h2 {
   justify-content: center;
   width: 38px;
   height: 38px;
-  border: 1px solid #dce2e8;
+  border: 1px solid #d9e2ee;
   border-radius: 8px;
   background: #ffffff;
-  color: #17202a;
+  color: #18212f;
   cursor: pointer;
 }
 
 .empty-state {
   padding: 20px;
-  border: 1px dashed #b8c5cf;
+  border: 1px dashed #b7c8dd;
   border-radius: 8px;
-  color: #52606d;
+  color: #5f6f84;
   background: rgba(255, 255, 255, 0.66);
 }
 
