@@ -51,30 +51,36 @@ export default function App() {
 
   return (
     <main className="app-shell">
-      <section className="workspace">
+      <section className="hero">
         <div className="intro">
           <h1>URL Shortener</h1>
           <p>
-            Paste a long link, create a compact short URL, and track how many times it has been opened.
+            Transform your long URLs into clean, professional short links
+            that are easy to share and track
           </p>
         </div>
+      </section>
 
+      <section className="workspace">
         <div className="tool-panel">
+          <div className="panel-heading">
+            <h2>Shorten Your URLs</h2>
+            <p>Transform long URLs into short, shareable links in seconds</p>
+          </div>
+
           <form className="shorten-form" onSubmit={handleSubmit}>
-            <label htmlFor="originalUrl">Long URL</label>
             <div className="input-row">
-              <Link2 size={20} aria-hidden="true" />
               <input
                 id="originalUrl"
                 value={originalUrl}
                 onChange={(event) => setOriginalUrl(event.target.value)}
-                placeholder="https://example.com/very/long/link"
+                placeholder="Enter your URL here (e.g. https://example.com/very-long-url)"
                 type="url"
                 required
               />
               <button disabled={status === 'saving'} type="submit">
                 {status === 'saving' ? <Loader2 className="spin" size={18} /> : <Link2 size={18} />}
-                Shorten
+                Shorten URL
               </button>
             </div>
           </form>

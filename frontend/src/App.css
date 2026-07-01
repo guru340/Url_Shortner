@@ -1,6 +1,6 @@
 :root {
-  color: #18212f;
-  background: #f8fafc;
+  color: #3d4c66;
+  background: #f6f8fc;
   font-family:
     Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
@@ -26,31 +26,23 @@ a {
 
 .app-shell {
   min-height: 100vh;
-  padding: 32px 20px;
-  background:
-    linear-gradient(135deg, rgba(37, 99, 235, 0.12), transparent 34%),
-    linear-gradient(315deg, rgba(245, 158, 11, 0.16), transparent 36%),
-    #f8fafc;
+  background: #f6f8fc;
 }
 
-.workspace {
-  width: min(1080px, 100%);
-  margin: 0 auto;
+.hero {
+  min-height: 52vh;
+  display: grid;
+  place-items: center;
+  padding: 72px 20px 128px;
+  background:
+    linear-gradient(90deg, rgba(210, 219, 233, 0.78) 0 1px, transparent 1px 14px),
+    linear-gradient(0deg, rgba(210, 219, 233, 0.55) 0 1px, transparent 1px 14px),
+    linear-gradient(120deg, #eef3fa 0%, #e7edf7 48%, #f6eefa 100%);
 }
 
 .intro {
-  max-width: 720px;
-  margin-bottom: 28px;
-}
-
-.eyebrow {
-  display: block;
-  margin-bottom: 8px;
-  color: #2563eb;
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0;
-  text-transform: uppercase;
+  width: min(900px, 100%);
+  text-align: center;
 }
 
 h1,
@@ -60,64 +52,82 @@ p {
 }
 
 h1 {
-  font-size: clamp(2.4rem, 7vw, 4.75rem);
-  line-height: 0.98;
+  color: #537cf4;
+  font-size: clamp(3.4rem, 6vw, 4.7rem);
+  font-weight: 800;
+  line-height: 1.05;
   letter-spacing: 0;
 }
 
-h2 {
-  font-size: 1.2rem;
-  line-height: 1.2;
+.intro p {
+  max-width: 780px;
+  margin: 28px auto 0;
+  color: #53627d;
+  font-size: clamp(1.15rem, 2vw, 1.55rem);
+  line-height: 1.35;
 }
 
-.intro p {
-  max-width: 620px;
-  margin-top: 16px;
-  color: #5f6f84;
-  font-size: 1.05rem;
-  line-height: 1.6;
+.workspace {
+  width: min(1120px, calc(100% - 32px));
+  margin: -72px auto 0;
+  padding-bottom: 48px;
 }
 
 .tool-panel {
-  padding: 24px;
-  border: 1px solid #d9e2ee;
+  padding: 34px 30px 30px;
+  border: 1px solid #cbd5e5;
   border-radius: 8px;
   background: #ffffff;
-  box-shadow: 0 18px 45px rgba(24, 33, 47, 0.08);
+  box-shadow: 0 16px 42px rgba(64, 83, 116, 0.08);
 }
 
-.shorten-form label {
-  display: block;
-  margin-bottom: 10px;
-  color: #253044;
-  font-size: 0.92rem;
+.panel-heading {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.panel-heading h2 {
+  color: #537cf4;
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
   font-weight: 800;
+  line-height: 1.15;
+}
+
+.panel-heading p {
+  margin-top: 12px;
+  color: #53627d;
+  font-size: clamp(1rem, 1.7vw, 1.3rem);
+  line-height: 1.4;
 }
 
 .input-row {
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: minmax(0, 1fr) 212px;
+  gap: 20px;
   align-items: center;
-  gap: 12px;
-  min-height: 56px;
-  padding: 8px 8px 8px 16px;
-  border: 1px solid #cbd8e8;
-  border-radius: 8px;
-  background: #f9fbff;
-}
-
-.input-row svg {
-  color: #2563eb;
-  flex: 0 0 auto;
 }
 
 .input-row input {
   width: 100%;
   min-width: 0;
-  border: 0;
+  min-height: 62px;
+  padding: 0 22px;
+  border: 1px solid #edf1f7;
+  border-radius: 8px;
   outline: 0;
-  background: transparent;
-  color: #18212f;
+  background: #ffffff;
+  color: #334155;
+  box-shadow: 0 6px 18px rgba(64, 83, 116, 0.04);
+}
+
+.input-row input::placeholder {
+  color: #53627d;
+  opacity: 0.95;
+}
+
+.input-row input:focus {
+  border-color: #6b8ff7;
+  box-shadow: 0 0 0 4px rgba(83, 124, 244, 0.14);
 }
 
 .input-row button,
@@ -125,19 +135,18 @@ h2 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  min-height: 42px;
+  gap: 9px;
+  min-height: 56px;
   border: 0;
-  border-radius: 8px;
-  background: #2563eb;
-  color: #ffffff;
+  border-radius: 7px;
   cursor: pointer;
   font-weight: 800;
 }
 
 .input-row button {
-  min-width: 118px;
-  padding: 0 18px;
+  padding: 0 22px;
+  background: linear-gradient(90deg, #346bf0, #6c8cf8);
+  color: #ffffff;
 }
 
 .input-row button:disabled {
@@ -147,12 +156,12 @@ h2 {
 
 .secondary-button {
   padding: 0 14px;
-  background: #fff3d6;
-  color: #7c4a03;
+  background: #edf3ff;
+  color: #346bf0;
 }
 
 .message {
-  margin-top: 14px;
+  margin-top: 16px;
   font-weight: 700;
 }
 
@@ -165,16 +174,16 @@ h2 {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  margin-top: 18px;
+  margin-top: 22px;
   padding: 16px;
-  border: 1px solid #b6cdfb;
+  border: 1px solid #b9cdfb;
   border-radius: 8px;
-  background: #eff6ff;
+  background: #eff5ff;
 }
 
 .result span,
 .url-actions span {
-  color: #5f6f84;
+  color: #61708a;
   font-size: 0.86rem;
   font-weight: 800;
 }
@@ -183,14 +192,14 @@ h2 {
 .short-link {
   display: block;
   margin-top: 4px;
-  color: #1d4ed8;
+  color: #346bf0;
   font-weight: 900;
   overflow-wrap: anywhere;
   text-decoration: none;
 }
 
 .history {
-  margin-top: 28px;
+  margin-top: 34px;
 }
 
 .history-heading {
@@ -199,6 +208,22 @@ h2 {
   justify-content: space-between;
   gap: 16px;
   margin-bottom: 14px;
+}
+
+.history-heading h2 {
+  color: #25324a;
+  font-size: 1.2rem;
+  line-height: 1.2;
+}
+
+.eyebrow {
+  display: block;
+  margin-bottom: 8px;
+  color: #537cf4;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
 }
 
 .url-list {
@@ -212,7 +237,7 @@ h2 {
   align-items: center;
   gap: 18px;
   padding: 16px;
-  border: 1px solid #d9e2ee;
+  border: 1px solid #d8e1ef;
   border-radius: 8px;
   background: #ffffff;
 }
@@ -223,7 +248,7 @@ h2 {
 
 .url-main p {
   margin-top: 6px;
-  color: #5f6f84;
+  color: #61708a;
   overflow-wrap: anywhere;
 }
 
@@ -240,19 +265,19 @@ h2 {
   justify-content: center;
   width: 38px;
   height: 38px;
-  border: 1px solid #d9e2ee;
+  border: 1px solid #d8e1ef;
   border-radius: 8px;
   background: #ffffff;
-  color: #18212f;
+  color: #334155;
   cursor: pointer;
 }
 
 .empty-state {
   padding: 20px;
-  border: 1px dashed #b7c8dd;
+  border: 1px dashed #b8c6da;
   border-radius: 8px;
-  color: #5f6f84;
-  background: rgba(255, 255, 255, 0.66);
+  color: #61708a;
+  background: rgba(255, 255, 255, 0.72);
 }
 
 .spin {
@@ -266,12 +291,18 @@ h2 {
 }
 
 @media (max-width: 720px) {
-  .app-shell {
-    padding: 24px 14px;
+  .hero {
+    min-height: 44vh;
+    padding: 56px 18px 96px;
+  }
+
+  .workspace {
+    width: min(100% - 28px, 1120px);
+    margin-top: -52px;
   }
 
   .tool-panel {
-    padding: 18px;
+    padding: 26px 18px 20px;
   }
 
   .input-row,
@@ -279,8 +310,8 @@ h2 {
     grid-template-columns: 1fr;
   }
 
-  .input-row > svg {
-    display: none;
+  .input-row {
+    gap: 12px;
   }
 
   .input-row button {
