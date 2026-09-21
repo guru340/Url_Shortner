@@ -36,7 +36,7 @@ mvn spring-boot:run
 The backend runs at:
 
 ```text
-http://localhost:8080
+http://localhost:8081
 ```
 
 Useful backend URLs:
