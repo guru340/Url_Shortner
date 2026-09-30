@@ -4,7 +4,7 @@ This project is a learning-friendly full stack app built with:
 
 - Spring Boot backend
 - React frontend
-- H2 in-memory database
+- H2 in-memory databases
 - REST APIs
 
 The app lets a user paste a long URL, creates a short code, lists recently shortened URLs, and redirects visitors from the short code to the original URL.
